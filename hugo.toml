@@ -1,0 +1,4 @@
+baseURL = 'http://example.org/'
+languageCode = 'zh-cn'
+title = '鸠兹先生'
+theme = 'reimu'
