@@ -4,28 +4,29 @@ languageCode = 'zh-cn'
 title = '东湖先生'
 theme = 'reimu'
 
-# CJK 语言支持（你的原始配置，保持即可）
+# CJK 语言支持
 [languages]
   [languages.zh-cn]
     weight = 1
     hasCJKLanguage = true
 
 # ----------------------------------------------------
-# ↓↓↓↓  你需要添加的所有主题功能配置都放在这里 ↓↓↓↓
+# 主题功能配置区
 # ----------------------------------------------------
+
+# [params] 表格，用于设置作者等基本参数
 [params]
-  # 网站作者信息
-  author = "东湖先生"
-  # 你可以在这里添加更多个人信息
+author = "东湖先生"
 
-  # 1. 开启 Pjax 功能（为了音乐播放不中断）
-  [params.features]
-    [params.features.pjax]
-      enable = true
+# [params.features.pjax] 表格，用于开启 Pjax 功能
+# 这个表格定义了 params -> features -> pjax 的嵌套结构
+[params.features.pjax]
+enable = true
 
-  # 2. 开启并配置音乐播放器
-  [params.music]
-    enable = true         # 总开关，开启播放器
-    server = "netease"    # 音乐平台，比如 "netease" 或 "tencent"
-    type = "playlist"     # 类型，比如 "playlist" 或 "song"
-    id = "7232039344"     # ❗【请务必替换成你自己的歌单或歌曲 ID】❗
+# [params.music] 表格，用于配置音乐播放器
+# 这个表格定义了 params -> music 的嵌套结构
+[params.music]
+enable = true
+server = "netease"
+type = "playlist"
+id = "7232039344"
