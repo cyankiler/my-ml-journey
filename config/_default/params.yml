@@ -46,7 +46,7 @@ banner_srcset:
     - src: "images/banner.webp"
       media: "(min-width: 800px)"
 
-avatar: "yadou.webp"
+avatar: "avatar.webp"
 
 # Control the display of the post cover
 # If not set, the banner image will be displayed by default
