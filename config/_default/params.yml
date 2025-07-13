@@ -543,7 +543,7 @@ home_categories:
 
 # Experimental, may have a lot of bugs, open with caution!
 pjax:
-  enable: false
+  enable: true
 
 # Experimental
 # https://github.com/GoogleChromeLabs/quicklink
@@ -578,32 +578,34 @@ pace:
 
 # Experimental
 # Please turn on pjax to use this feature
+# Player
 player:
   # if you enable meting, you must enable aplayer first
   aplayer:
     # https://github.com/DIYgod/APlayer
-    enable: false
+    enable: true
     options:
-      audio: []
-      fixed: true
-      autoplay:
-      loop:
-      order:
-      preload:
-      volume:
-      mutex:
-      listFolded:
-      lrcType:
+      # audio: []  # 这一行保持不动或删除，因为 Meting 会自动填充歌曲
+      fixed: true              # 开启吸底模式，让播放器固定在页面底部
+      autoplay: false          # 是否自动播放，建议 false，避免打扰访客
+      loop: 'all'              # 播放循环模式: 'all' (列表循环), 'one' (单曲循环), 'none' (不循环)
+      order: 'list'            # 播放顺序: 'list' (列表顺序), 'random' (随机播放)
+      preload: 'auto'          # 预加载: 'auto', 'metadata', 'none'
+      volume: 0.7              # 默认音量 (0 到 1 之间)
+      mutex: true              # 互斥锁，防止多个播放器同时播放
+      listFolded: false        # 默认是否折叠播放列表，建议 false，让访客能看到歌单
+      lrcType: 3               # 歌词格式类型，3 表示使用 Meting 的歌词
   meting:
     # https://github.com/metowolf/MetingJS
     # if you want to use meting, please enable aplayer first
-    enable: false
-    meting_api: # custom api
+    enable: true
+    meting_api: # custom api, 如果不使用自定义API，保持为空即可
     options:
-      id: 2265921590
-      server: netease
-      type: playlist
-      auto:
+      id: "7232039344"   # <-- 这里是您的歌单ID，确保是正确的
+      server: "netease"   # <-- 您的音乐平台
+      type: "playlist"    # <-- 您的资源类型
+      # 'auto' 选项不是 MetingJS 的标准选项，可以直接移除
+
 
 ########################################
 # pangu.js
