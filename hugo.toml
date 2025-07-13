@@ -1,7 +1,7 @@
 # 网站基础配置
 baseURL = 'http://example.org/'
 languageCode = 'zh-cn'
-title = '东湖先生'
+title = '鸠兹先生'
 theme = 'reimu'
 
 # CJK 语言支持
@@ -16,7 +16,7 @@ theme = 'reimu'
 
 # [params] 表格，用于设置作者等基本参数
 [params]
-author = "东湖先生"
+author = "鸠兹先生"
 
 # [params.features.pjax] 表格，用于开启 Pjax 功能
 # 这个表格定义了 params -> features -> pjax 的嵌套结构
