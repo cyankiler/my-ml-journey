@@ -104,7 +104,7 @@ footer:
     mask: true # whether to use the images as a mask
 
 # Sidebar
-sidebar: right
+sidebar: left
 
 social:
   # email: mailto:xxx@gmail.com
@@ -593,7 +593,7 @@ player:
       preload: 'auto'          # 预加载: 'auto', 'metadata', 'none'
       volume: 0.7              # 默认音量 (0 到 1 之间)
       mutex: true              # 互斥锁，防止多个播放器同时播放
-      listFolded: false        # 默认是否折叠播放列表，建议 false，让访客能看到歌单
+      listFolded: true        # 默认是否折叠播放列表，建议 false，让访客能看到歌单
       lrcType: 3               # 歌词格式类型，3 表示使用 Meting 的歌词
   meting:
     # https://github.com/metowolf/MetingJS
