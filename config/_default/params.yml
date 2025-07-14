@@ -586,7 +586,7 @@ player:
     enable: true
     options:
       # audio: []  # 这一行保持不动或删除，因为 Meting 会自动填充歌曲
-      fixed: true              # 开启吸底模式，让播放器固定在页面底部
+      fixed: false              # 开启吸底模式，让播放器固定在页面底部
       autoplay: true          # 是否自动播放，建议 false，避免打扰访客
       loop: 'all'              # 播放循环模式: 'all' (列表循环), 'one' (单曲循环), 'none' (不循环)
       order: 'list'            # 播放顺序: 'list' (列表顺序), 'random' (随机播放)
