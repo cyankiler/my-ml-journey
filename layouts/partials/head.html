@@ -141,3 +141,9 @@
 {{- if .Site.Params.player.aplayer.enable -}}
   {{- partial "helpers/css.html" (dict "raw" $css.aplayer "src" (index (partial "helpers/vendorCdn.html" (dict "item" $css.aplayer "ctx" $site)) 0) "integrity" (index (partial "helpers/vendorCdnIntegrity.html" (dict "item" $css.aplayer)) 0)) -}}
 {{- end -}}
+
+{{/* ================================================= */}}
+{{/* ===== 在这里添加我们自己的自定义CSS加载代码 ===== */}}
+{{/* ================================================= */}}
+{{- $customCSS := resources.Get "css/custom.css" | resources.Minify | resources.Fingerprint -}}
+<link rel="stylesheet" href="{{ $customCSS.RelPermalink }}" integrity="{{ $customCSS.Data.Integrity }}">
