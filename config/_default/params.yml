@@ -596,12 +596,12 @@ player:
       listFolded: true        # 默认是否折叠播放列表，建议 false，让访客能看到歌单
       lrcType: 3               # 歌词格式类型，3 表示使用 Meting 的歌词
   meting:
-  enable: true
-  meting_api: 'https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r'
-  options:
-    id: "7232039344"
-    server: "netease"
-    type: "playlist"
+    enable: true
+    meting_api: 'https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r'
+    options:
+      id: "7232039344"
+      server: "netease"
+      type: "playlist"
 
 
 
