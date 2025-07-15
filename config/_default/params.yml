@@ -597,9 +597,10 @@ player:
       lrcType: 3               # 歌词格式类型，3 表示使用 Meting 的歌词
   meting:
     enable: true
+    # ⬇️⬇️⬇️ 这是本次操作唯一、​也是最关键的改动 ⬇️⬇️⬇️
     meting_api: 'https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r'
     options:
-      id: "19723756"
+      id: "19723756"  # 或者换回您自己的ID
       server: "netease"
       type: "playlist"
 
