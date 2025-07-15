@@ -596,15 +596,13 @@ player:
       listFolded: true        # 默认是否折叠播放列表，建议 false，让访客能看到歌单
       lrcType: 3               # 歌词格式类型，3 表示使用 Meting 的歌词
   meting:
-    # https://github.com/metowolf/MetingJS
-    # if you want to use meting, please enable aplayer first
-    enable: true
-    meting_api: 'https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r'
-    options:
-      id: "5335905276"   # <-- 这里是您的歌单ID，确保是正确的
-      server: "netease"   # <-- 您的音乐平台
-      type: "playlist"    # <-- 您的资源类型
-      # 'auto' 选项不是 MetingJS 的标准选项，可以直接移除
+  enable: true
+  meting_api: 'https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r'
+  options:
+    id: "7232039344"
+    server: "netease"
+    type: "playlist"
+
 
 
 ########################################
