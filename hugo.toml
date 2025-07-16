@@ -30,3 +30,8 @@ enable = true
 server = "netease"
 type = "playlist"
 id = "7232039344"
+
+# 代码块的正常显示
+[markup.highlight]
+guessSyntax = true
+noClasses = false
