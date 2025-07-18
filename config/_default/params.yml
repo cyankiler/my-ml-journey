@@ -602,7 +602,6 @@ player:
       id: "7232039344"  
       server: "netease"
       type: "playlist"
-      auto: true
       autoplay: true
       loop: 'all'
       mutex: false
