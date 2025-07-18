@@ -39,3 +39,25 @@ numpy最核心的特点是：
 - ndarray.ndim: 数组的“维度数量”。shape元组的长度。
 - ndarray.dtype: 数组中元素的“数据类型”，如 int64, float64。
 - ndarray.size: 数组中元素的“总数量”。
+
+### 必备技能
+#### 创建数组
+```
+import numpy as np # np是NumPy的官方和社区标准别名
+
+# 从Python列表创建
+my_list = [1, 2, 3]
+arr1 = np.array(my_list) # -> array​([1, 2, 3])
+
+# 创建特定形状的数组
+zeros_arr = np.zeros((2, 3)) # -> 创建一个2行3列的全0数组
+ones_arr = np.ones((3, 2))   # -> 创建一个3行2列的全1数组
+
+# 创建序列数组
+range_arr = np.arange(0, 10, 2) # -> array([0, 2, 4, 6, 8]) (从0到10，步长为2)
+linspace_arr = np.linspace(0, 1, 5) # -> array([0. , 0.25, 0.5 , 0.75, 1. ]) (从0到1，生成5个等间距的点)
+
+# 创建随机数组
+random_arr = np.random.rand(3, 3) # -> 创建一个3x3的，0到1之间的随机浮点数数组
+
+```
