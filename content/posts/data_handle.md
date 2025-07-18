@@ -3,7 +3,7 @@ title: "第一章 学会数据处理的三件套"
 draft: false
 author: "jiuzi"
 tags: [ "Pandas", "Numpy", "matplotlib"]
-categories: ["技术教程"]
+categories: ["技术教程","机器学习"]
 date: 2025-07-15T12:00:00+08:00 # 确保是过去的时间
 lastmod: 2025-07-15T12:00:00+08:00 #修改时间
 description: "学习数据科学必经之路！本文只简单掌握Numpy、Pandas和Matplotlib这三个Python数据处理核心库的基础用法。"
