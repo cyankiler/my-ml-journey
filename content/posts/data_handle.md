@@ -5,7 +5,7 @@ author: "jiuzi"
 tags: [ "Pandas", "Numpy", "matplotlib"]
 categories: ["技术教程"]
 date: 2025-7-15T12:00:00+08:00 # 确保是过去的时间
-lastmod: 2025-7-15T12:00:00+08:00 
+lastmod: 2025-7-15T12:00:00+08:00 #修改时间
 description: "学习数据科学必经之路！本文只简单掌握Numpy、Pandas和Matplotlib这三个Python数据处理核心库的基础用法。"
 featured_image: "https://cdn.jsdelivr.net/gh/cyankiler/my-blog-assets@main/images/pandas.png"
 ---
