@@ -85,8 +85,10 @@ ny_adults = df[(df['City'] == 'New York') & (df['Age'] > 30)]
 ```
 ##### d. 分组聚合 (.groupby())
 这是Pandas的“必杀技”，用于实现“拆分-应用-合并”的操作。
+```
 # 按城市分组，然后计算每个城市的平均年龄
 avg_age_by_city = df.groupby('City')['Age'].mean()
+```
 
 ### Matplotlib：数据可视化
 #### 1. 核心思想：Figure 和 Axes
