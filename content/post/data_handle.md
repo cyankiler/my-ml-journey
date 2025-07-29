@@ -1,7 +1,7 @@
 ---
 title: "第一章 学会数据处理的三件套"
 draft: false
-author: "jiuzi"
+author: "cyankiler"
 tags: [ "Pandas", "Numpy", "matplotlib"]
 categories: ["技术教程","机器学习"]
 date: 2025-07-15T12:00:00+08:00 # 确保是过去的时间
