@@ -19,5 +19,5 @@ description: "学习半导体模块的寿命预测所必须的参数"
 
 {{< figure src="/images/AQG324_degration.png" 
         title="图 1：AQG324标准中的失效标准" 
-        class="figure-center">}}
+        class="custom-figure-style-1" >}}
 

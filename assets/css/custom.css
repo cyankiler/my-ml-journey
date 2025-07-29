@@ -9,3 +9,20 @@
   /* 设置夜间模式下，头部导航栏的背景颜色 */
   --color-header-background: #2c3e5050; /* 替换成你想要的夜间模式颜色 */
 }
+
+/*
+ * 为 'custom-figure-style-1' 类设置一组自定义样式
+ */
+
+/* 标题居中 */
+.custom-figure-style-1 figcaption {
+  text-align: center;
+}
+
+/* 图片缩小并居中 */
+.custom-figure-style-1 img {
+  max-width: 80%; /* 或者您想要的任何尺寸 */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
