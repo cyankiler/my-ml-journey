@@ -1,15 +1,34 @@
 {{- $ctx := . -}}
 
-{{/* 从 data/covers.yml 文件中读取图片列表 */}}
+{{/* 检查图片池是否存在 */}}
 {{- if .Site.Data.covers -}}
   
-  {{- $cover_count := len .Site.Data.covers -}}
+  {{- $covers := .Site.Data.covers -}}
+  {{- $cover_count := len $covers -}}
 
   {{- if gt $cover_count 0 -}}
-    {{/* 使用文章索引进行循环分配 */}}
-    {{- $cover_index := mod $ctx.index $cover_count -}}
-    {{- $selected_cover := index .Site.Data.covers $cover_index -}}
-    {{- $selected_cover | relURL -}}
-  {{- end -}}
+    
+    {{/* 
+      核心逻辑变更：
+      首先检查我们是否被传入了 index（来自列表页）
+    */}}
+    {{- if isset $ctx "index" -}}
+      
+      {{/* 如果有 index，使用我们之前的“循环分配”法 */}}
+      {{- $cover_index := mod $ctx.index $cover_count -}}
+      {{- $selected_cover := index $covers $cover_index -}}
+      {{- $selected_cover | relURL -}}
 
+    {{- else -}}
+
+      {{/* 
+        如果没有 index（例如在“上一篇/下一篇”导航中被调用），
+        就使用安全的“随机”法作为后备方案。
+        这里我们用 shuffle，比 math.Rand 更简单高效。
+      */}}
+      {{- $selected_cover := index (shuffle $covers) 0 -}}
+      {{- $selected_cover | relURL -}}
+
+    {{- end -}}
+  {{- end -}}
 {{- end -}}
