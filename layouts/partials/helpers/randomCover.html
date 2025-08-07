@@ -1,3 +1,15 @@
-{{- $covers := .Site.Data.covers -}}
-{{- $cover := index $covers (math.Rand | mul (len $covers) | math.Floor | int) -}}
-{{- return $cover -}}
+{{- $ctx := . -}}
+
+{{/* 从 data/covers.yml 文件中读取图片列表 */}}
+{{- if .Site.Data.covers -}}
+  
+  {{- $cover_count := len .Site.Data.covers -}}
+
+  {{- if gt $cover_count 0 -}}
+    {{/* 使用文章索引进行循环分配 */}}
+    {{- $cover_index := mod $ctx.index $cover_count -}}
+    {{- $selected_cover := index .Site.Data.covers $cover_index -}}
+    {{- $selected_cover | relURL -}}
+  {{- end -}}
+
+{{- end -}}
