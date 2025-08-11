@@ -52,9 +52,5 @@ isPlainText = true
 mediaType = "application/json"
 notAlternative = true
 
-# 数学公式的正常显示
-[markup.goldmark.extensions.passthrough]
-enable = true
-delimiters.block = [["\\[", "\\]"], ["$$", "$$"]]
-delimiters.inline = [["\\(", "\\)"], ["$", "$"]]
+
 
