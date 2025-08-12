@@ -107,4 +107,9 @@ $((C+t_on^γ)/(C+1))$ (高级时间依赖项)：$ton$对寿命的影响可能不
 
 综上所述，构建先进的GaN功率器件寿命模型，必须在传统的以热机械应力（如温差ΔTj、平均温度Tj,mean和脉冲时间ton）为主导的物理框架基础上，进一步融入对GaN特有电应力的精细量化，特别是将栅极电压应力Vgs、开关瞬态的峰值电压Vds_peak、负载电流I、开关频率f_sw以及电压变化率dv/dt等关键参数作为核心变量。这本质上是承认了GaN的寿命不仅受封装热疲劳的限制，更深刻地受到其独特半导体物理特性下多种电应力耦合作用的共同驱动。
 
+#### 引用论文
+【1】ECPE Guideline AQG 324 Qualification of Power Modules for Use in Power Electronics Converter Units in Motor Vehicles
+【2】R. Bayerer, T. Herrmann, T. Licht, J. Lutz and M. Feller, "Model for Power Cycling lifetime of IGBT Modules - various factors influencing lifetime," 5th International Conference on Integrated Power Electronics Systems, Nuremberg, Germany, 2008, pp. 1-6.
+【3】K. Mainka, M. Thoben and O. Schilling, "Lifetime calculation for power modules, application and theory of models and counting methods," Proceedings of the 2011 14th European Conference on Power Electronics and Applications, Birmingham, UK, 2011, pp. 1-8.
+
 **今日诗句：大都好物不坚牢，彩云易散琉璃脆**
