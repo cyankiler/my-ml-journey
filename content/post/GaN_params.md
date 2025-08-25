@@ -144,7 +144,7 @@ Navitas公司在2018年的美国应用电力电子会议中以ACF架构的充电
 $$应用寿命 = AF_Total × TTF_reliability$$
 
 {{< figure src="/images/navitas.png" 
-        title="图 1：navitas给出的寿命模型" 
+        title="图 3：navitas给出的寿命模型" 
         class="custom-figure-style-1" >}}
 
 若要利用LSTM-PINN模型并结合Navitas物理模型来预测寿命，需要两类关键的电参数时间序列数据。第一类是定义外部应力的**核心物理输入**，主要包括**工作结温（Tj）、漏源电压（Vds）**，它们是驱动PINN中物理定律（如Arrhenius和Power-Law模型）的直接变量。第二类是反映器件内部健康状态的**动态监测指标**，如**导通电阻（Rds(on)）**、**栅极阈值电压（Vth）**以及**各项漏电流（Igss, Idss）**等。在模型中，LSTM负责从这些健康指标随时间退化的模式中学习并预测剩余寿命，而PINN则确保整个预测过程严格遵守由Tj和Vds决定的物理加速法则，从而使模型的预测结果兼具数据驱动的精确性和物理规律的可靠性。
@@ -153,7 +153,9 @@ $$应用寿命 = AF_Total × TTF_reliability$$
 
 #### 引用论文
 【1】ECPE Guideline AQG 324 Qualification of Power Modules for Use in Power Electronics Converter Units in Motor Vehicles
+
 【2】R. Bayerer, T. Herrmann, T. Licht, J. Lutz and M. Feller, "Model for Power Cycling lifetime of IGBT Modules - various factors influencing lifetime," 5th International Conference on Integrated Power Electronics Systems, Nuremberg, Germany, 2008, pp. 1-6.
+
 【3】K. Mainka, M. Thoben and O. Schilling, "Lifetime calculation for power modules, application and theory of models and counting methods," Proceedings of the 2011 14th European Conference on Power Electronics and Applications, Birmingham, UK, 2011, pp. 1-8.
 
 **今日诗句：大都好物不坚牢，彩云易散琉璃脆**
