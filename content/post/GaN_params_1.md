@@ -1,5 +1,5 @@
 ---
-title: "第一章 GaN功率器件寿命预测必要参数（2）"
+title: "第一章 GaN功率器件寿命预测必要参数（1）"
 draft: false
 math: true
 author: "cyankiler"
