@@ -1,5 +1,5 @@
 ---
-title: "第一章 GaN功率器件寿命预测必要参数（1）"
+title: "第一章 GaN功率器件寿命预测必要参数"
 draft: false
 math: true
 author: "cyankiler"
@@ -153,9 +153,7 @@ $$应用寿命 = AF_Total × TTF_reliability$$
 
 #### 引用论文
 【1】ECPE Guideline AQG 324 Qualification of Power Modules for Use in Power Electronics Converter Units in Motor Vehicles
-
 【2】R. Bayerer, T. Herrmann, T. Licht, J. Lutz and M. Feller, "Model for Power Cycling lifetime of IGBT Modules - various factors influencing lifetime," 5th International Conference on Integrated Power Electronics Systems, Nuremberg, Germany, 2008, pp. 1-6.
-
 【3】K. Mainka, M. Thoben and O. Schilling, "Lifetime calculation for power modules, application and theory of models and counting methods," Proceedings of the 2011 14th European Conference on Power Electronics and Applications, Birmingham, UK, 2011, pp. 1-8.
 
 **今日诗句：大都好物不坚牢，彩云易散琉璃脆**
