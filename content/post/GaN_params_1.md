@@ -107,6 +107,50 @@ $((C+t_on^γ)/(C+1))$ (高级时间依赖项)：$ton$对寿命的影响可能不
 
 综上所述，构建先进的GaN功率器件寿命模型，必须在传统的以热机械应力（如温差ΔTj、平均温度Tj,mean和脉冲时间ton）为主导的物理框架基础上，进一步融入对GaN特有电应力的精细量化，特别是将栅极电压应力Vgs、开关瞬态的峰值电压Vds_peak、负载电流I、开关频率f_sw以及电压变化率dv/dt等关键参数作为核心变量。这本质上是承认了GaN的寿命不仅受封装热疲劳的限制，更深刻地受到其独特半导体物理特性下多种电应力耦合作用的共同驱动。
 
+### Navitas
+
+Navitas公司在2018年的美国应用电力电子会议中以ACF架构的充电器为例，提出了一种寿命模型。
+
+它所提出的问题是，半导体器件的可靠性测试通常是在实验室的**严苛条件**（极高的温度和电压）下进行的，这样可以在较短的时间（如1000小时）内观察到其失效情况。但是，在**实际应用**（如充电器）中，器件承受的温度和电压要温和得多。那么，如何用短期的、严苛的实验结果来科学地预测长期的、温和的应用寿命呢？
+
+答案就是使用基于物理模型的**“加速因子”（Acceleration Factor）**。其基本逻辑是：**实际应用的寿命 = 实验室测得的寿命 × 加速因子**。加速因子是一个远大于1的数字，它量化了实际工况比实验工况“温和”多少倍。
+
+文章指出，器件的寿命主要受两大应力影响：温度和电压。因此需要分别计算这两种应力带来的加速效应。
+
+1. 温度加速因子 (Temperature Acceleration Factor, AF_temp)
+
+- **模型**：基于经典的**阿伦尼乌斯（Arrhenius）模型**，这是描述化学反应速率与温度关系的黄金定律，同样适用于半导体的热老化过程。
+
+- **公式**：$$AF_temp = e ^ ((Ea/k) * (1/T_application - 1/T_reliability))$$
+
+- **解释**：这个公式的核心是**活化能 $Ea$**（navitas给出为 **0.62eV**），它代表了特定失效模式发生所需的能量。公式计算了在实际应用温度（$T_application$）和实验室可靠性测试温度（$T_reliability$）下，器件寿命的差异倍率。
+
+2. 电压加速因子 (Voltage Acceleration Factor, AF_voltage)
+
+- **模型**：基于**幂律（Power Law）模型**，用于描述电压应力对器件寿命的影响。
+
+- **公式**：$$AF_voltage = (V_reliability / V_application)^n$$
+
+- **解释**：这个公式的核心是**电压加速指数 $n$**（navitas给出为 **21**），它代表了器件寿命对电压变化的敏感程度。$n$值越大，说明电压稍微降低一点，寿命就能延长很多倍。
+
+有了这两个加速因子之后，下一步便是计算总加速因子，由于温度和电压应力同时作用于器件，总的加速效应便是两者相乘即可。
+
+- **公式**：$$AF_Total = AF_TEMP × AF_VOLTAGE$$
+
+- **解释**：这一步将两种不同物理应力的影响整合为一个总的加速倍率。
+
+最后估算最终的应用寿命，将实验室测得的器件失效时间（$TTF_reliability$）乘以总加速因子，就得到了在实际应用中的预测寿命。得到公式：
+
+$$应用寿命 = AF_Total × TTF_reliability$$
+
+{{< figure src="/images/navitas.png" 
+        title="图 1：navitas给出的寿命模型" 
+        class="custom-figure-style-1" >}}
+
+若要利用LSTM-PINN模型并结合Navitas物理模型来预测寿命，需要两类关键的电参数时间序列数据。第一类是定义外部应力的**核心物理输入**，主要包括**工作结温（Tj）、漏源电压（Vds）**，它们是驱动PINN中物理定律（如Arrhenius和Power-Law模型）的直接变量。第二类是反映器件内部健康状态的**动态监测指标**，如**导通电阻（Rds(on)）**、**栅极阈值电压（Vth）**以及**各项漏电流（Igss, Idss）**等。在模型中，LSTM负责从这些健康指标随时间退化的模式中学习并预测剩余寿命，而PINN则确保整个预测过程严格遵守由Tj和Vds决定的物理加速法则，从而使模型的预测结果兼具数据驱动的精确性和物理规律的可靠性。
+
+
+
 #### 引用论文
 【1】ECPE Guideline AQG 324 Qualification of Power Modules for Use in Power Electronics Converter Units in Motor Vehicles
 【2】R. Bayerer, T. Herrmann, T. Licht, J. Lutz and M. Feller, "Model for Power Cycling lifetime of IGBT Modules - various factors influencing lifetime," 5th International Conference on Integrated Power Electronics Systems, Nuremberg, Germany, 2008, pp. 1-6.
